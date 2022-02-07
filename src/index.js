@@ -52,6 +52,10 @@ const cta = document.querySelector('.cta-text');
 const topContent = document.querySelector('.top-content');
 const bottomContent = document.querySelector('.bottom-content');
 
+const contact = document.querySelector('.contact');
+
+const footer = document.querySelector('footer');
+
 // add text contents
 
 cta.querySelector('h1').textContent = siteContent.cta.h1;
@@ -73,3 +77,21 @@ paragraphsFromSiteContent(topContent.querySelector('div:nth-child(2)'), 'about')
 paragraphsFromSiteContent(bottomContent.querySelector('div:nth-child(1)'), 'services');
 paragraphsFromSiteContent(bottomContent.querySelector('div:nth-child(2)'), 'product');
 paragraphsFromSiteContent(bottomContent.querySelector('div:nth-child(3)'), 'vision');
+
+contact.querySelector('h4').textContent = siteContent.contact["contact-h4"];
+contact.querySelector('p:nth-child(2)').textContent = siteContent.contact.address;
+contact.querySelector('p:nth-child(3)').textContent = siteContent.contact.phone;
+contact.querySelector('p:nth-child(4)').textContent = siteContent.contact.email;
+
+footer.querySelector('a').textContent = siteContent.footer.copyright;
+
+// add class names
+
+document.querySelectorAll('nav a').forEach(a => a.classList.add('italic'));
+document.querySelector('footer a').classList.add('bold');
+
+// add img sources
+
+document.querySelector('#logo-img').src = siteContent.images["logo-img"];
+document.querySelector('#cta-img').src = siteContent.images["cta-img"];
+document.querySelector('#middle-img').src = siteContent.images["accent-img"];
