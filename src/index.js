@@ -1,3 +1,5 @@
+'use strict';
+
 const siteContent = { // DO NOT CHANGE THIS OBJECT
   "nav": {
     "nav-item-1": "Services",
