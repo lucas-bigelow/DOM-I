@@ -42,3 +42,34 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 };
 
 console.log('project wired!')
+
+// create selectors MVP
+
+const nav = document.querySelector('nav');
+
+const cta = document.querySelector('.cta-text');
+
+const topContent = document.querySelector('.top-content');
+const bottomContent = document.querySelector('.bottom-content');
+
+// add text contents
+
+cta.querySelector('h1').textContent = siteContent.cta.h1;
+cta.querySelector('button').textContent = siteContent.cta.button;
+
+for (let i = 0; i < Object.keys(siteContent.nav).length; i++) {
+  nav.querySelector(`:nth-child(${i + 1})`).textContent = siteContent.nav[`nav-item-${i + 1}`];
+}
+
+function paragraphsFromSiteContent(target, page) {
+  console.log(target);
+  console.log(page);
+  target.querySelector('h4').textContent = siteContent["main-content"][`${page}-h4`];
+  target.querySelector('p').textContent = siteContent["main-content"][`${page}-content`];
+}
+
+paragraphsFromSiteContent(topContent.querySelector('div:nth-child(1)'), 'features');
+paragraphsFromSiteContent(topContent.querySelector('div:nth-child(2)'), 'about');
+paragraphsFromSiteContent(bottomContent.querySelector('div:nth-child(1)'), 'services');
+paragraphsFromSiteContent(bottomContent.querySelector('div:nth-child(2)'), 'product');
+paragraphsFromSiteContent(bottomContent.querySelector('div:nth-child(3)'), 'vision');
